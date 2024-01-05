@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="/media.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include("navbar") %>
+    <section>
+        <div class="row">
+            <div class="cart-details">
+                <div class="search">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i><input type="search" name="" id="" placeholder="Search..."></a>
+                </div>
+                <h2><a href="/">Home</a><i class="fa-solid fa-chevron-right"></i>All Products</h2>
+                <h3>Browse by</h3>
+                <div class="list-item">
+                    <button value="all" id="all">All products</button>
+                    <button value="bags" id="bags">bags</button>
+                    <button value="goods" id="goods">leather goods</button>
+                    <button value="minigoods" id="minigoods">mini leather goods</button>
+                    <button value="phone" id="phone">phone cases</button>
+                </div>
+                <div class="filter-price">
+                    <h2>Filter by</h2>
+                    <button id="lth">Low to High</button>
+                    <button id="htl">High to Low</button>
+                </div>
+            </div>
+            <div class="products">
+                <h1>Products :</h1>
+                <div id="carts"></div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section  -->
+    <%- include("footer") %>
+</body>
+<script src="/js/cart.js"></script>
+</html>

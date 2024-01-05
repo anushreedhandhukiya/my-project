@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="/media.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <%- include("navbar") %>
+        <section>
+            <div class="container">
+                <div class="contact">
+                    <h1>CUSTOMER SERVICE</h1>
+                    <h2>Inquiries</h2>
+                    <p>For questions regarding our products and services you can also contact us by filling out the form
+                        below.</p>
+                    <form method="post">
+                        <input type="text" name="name" placeholder="First Name" class="input-width" required>
+                        <input type="text" name="name" placeholder="Last Name" class="input-width" required>
+                        <br/>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <br/>
+                        <input type="text" name="subject" placeholder="Subject">
+                        <br/>
+                        <textarea name="message" placeholder="Message" cols="30" rows="5"></textarea>
+                        <br/>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer section  -->
+        <%- include("footer") %>
+</body>
+
+</html>

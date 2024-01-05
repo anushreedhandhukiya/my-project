@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/media.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <%- include("navbar") %>
+    <div class="userform">
+        <div class="container">
+            <h1>Sign Up</h1>
+            <form action="/user/signup" method="post">
+                <input type="text" name="username" id="username" placeholder="Enter Your UserName">
+                <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                <input type="text" name="password" id="password" placeholder="Password">
+                <p>Already have an account? <a href="/user/login"><u>Login</u></a></p>
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- footer section  -->
+    <%- include("footer") %>
+</body>
+
+</html>

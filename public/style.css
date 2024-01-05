@@ -1,0 +1,606 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+    --white:#ffffff;
+    --private-color:#bc4c2a;
+    --footer-color:#fef2f0;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.justify-content{
+    justify-content: space-between;
+}
+.align-item-center{
+    align-items: center;
+}
+.padding100{
+    padding: 100px 0;
+}
+
+/* header css  */
+header{
+    padding: 20px 0;
+    background-color: rgb(231, 231, 231);
+}
+header .logo a{
+    color: var(--private-color);
+    font-size: 40px;
+    font-style: italic;
+}
+header nav ul li{
+    padding: 0 20px;
+}
+header nav ul li a{
+    color: black;
+    transition: all 0.5s;
+    font-size: 18px;
+}
+header nav ul li a:hover{
+    color: var(--private-color);
+}
+header nav ol{
+    box-shadow: 0px 0px 15px rgba(0, 0, 0,0.2);
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 53px;  
+    z-index: 9;
+    visibility: hidden;
+    opacity: 0;
+}
+header nav ul li:hover ol{
+    visibility: visible;
+    opacity: 1;
+}
+header nav ol li{
+    padding: 10px 0;
+}
+header .nav-icon ol li{
+    font-size: 20px;
+    padding:0 15px;
+}
+header .nav-icon i {
+    color: black;
+    transition: all 0.5s;
+    font-size: 20px;
+}
+header .nav-icon i:hover{
+    color: var(--private-color);
+}
+
+
+/* signup and login form css */
+
+.userform{
+    width: 500px;
+    margin: 100px auto;
+    padding: 80px 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0,0.2);
+}
+.userform h1{
+    font-size: 40px;
+    font-style: italic;
+    color: var(--private-color);
+    padding-bottom: 50px;
+    margin-left: 20px;
+}
+.userform input{
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+    padding: 20px;
+    outline: none;
+    margin-bottom: 10px;
+}
+.userform p{
+    font-size: 20px;
+    padding: 20px;
+}
+.userform p a{
+    color: var(--private-color);
+}
+.userform button{
+    font-size: 20px;
+    padding: 15px 40px;
+    background-color: var(--private-color);
+    border: none;
+    color: var(--white);
+    margin-top: 35px;
+    margin-left: 20px;
+    border: 1px solid var(--private-color);
+    transition: all 0.5s;
+}
+.userform button:hover{
+    background-color: var(--white);
+    border: 1px solid var(--private-color);
+    color: var(--private-color);
+}
+
+/* home css */
+.home-img{
+    position: relative;
+}
+.home-img img{
+    width: 100%;
+}
+.overlay{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.425);
+    width: 100%;
+    height: 100%;
+}
+.home-btn{
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    right: 35%;
+    text-align: center;
+}
+.home-btn h1{
+    color: white;
+    font-size: 50px;
+    letter-spacing: 3px;
+    margin-bottom: 60px
+}
+.home-btn a{
+    padding: 20px 50px;
+    background-color: transparent;
+    border: 1px solid white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+    transition:  all 0.5s;
+}
+.home-btn a:hover{
+    background-color: rgba(255, 255, 255, 0.072);
+}
+
+/* section-title css  */
+.section-title{
+    text-align: center;
+    position: relative;
+}
+.section-title h2{
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+.section-title .title-line{
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    left: 555px;
+    top: 60px;
+}
+.col-xs-1{width: 8.3333%};
+.col-xs-2{width: 16.6666%};
+.col-xs-3{width: 25%};
+.col-xs-4{width: 33.3333%};
+.col-xs-5{width: 41.6666%};
+.col-xs-6{width: 50%};
+.col-xs-7{width: 58.3333%};
+.col-xs-8{width: 66.6666%};
+.col-xs-9{width: 75%};
+.col-xs-10{width: 83.3333%};
+.col-xs-11{width: 91.6666%};
+.col-xs-12{width: 100%};
+
+
+.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,.col-xl-1,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-10,.col-xl-11,.col-xl-12{
+    padding: 15px;
+}
+    
+/* products css  */
+.bags .slider-img{
+    margin: 50px 0;
+}
+.bags .slider-img img{
+    width: 270px;
+}
+.bags .slider-img h3{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+.bags .slider-img h2{
+    text-align: center;
+    color: var(--private-color);
+    font-weight: 200;
+    font-size: 20px;
+    font-style: italic;
+    padding: 10px 0;
+}
+.all-shopping{
+    width: 250px;
+    margin: auto;
+}
+.all-shopping a{
+    padding: 15px 50px;
+    font-size: 18px;
+    color: var(--white);
+    border: 1px solid var(--private-color);
+    background-color: var(--private-color);
+    transition: all 0.5s;
+}
+.all-shopping a:hover{
+    color: var(--private-color);
+    border: 1px solid var(--private-color);
+    background-color: var(--white);
+}
+.image-1{
+    margin: 50px 0;
+}
+.belt-img-1{
+    position: relative;
+    padding: 20px;
+}
+.belt-img-1 img{
+    width: 600px;
+}
+.belt-img-1 a{
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    font-size: 30px;
+    color: var(--white);
+    letter-spacing: 2px;
+    word-spacing: 5px;
+}
+.image-belt-2{
+    width: 100%;
+    margin: 100px;
+}
+
+.image-belt-2 h2{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+.image-belt-2 h3{
+    text-align: center;
+    color: var(--private-color);
+    font-weight: 200;
+    font-size: 20px;
+    font-style: italic;
+    padding: 10px 0;
+}
+.image-2{
+    width: 100%;
+    margin: 100px 0;
+}
+.image-2 img{
+    width: 500px;
+}
+.image-2 h2{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+.image-2 h3{
+    text-align: center;
+    color: var(--private-color);
+    font-weight: 200;
+    font-size: 20px;
+    font-style: italic;
+    padding: 10px 0;
+}
+.goods-img-1{
+    position: relative;
+    padding-left: 30px;
+}
+.goods-img-1 img{
+    width: 800px;
+}
+.goods-img-1 a{
+    position: absolute;
+    left: 250px;
+    top: 300px;
+    font-size: 30px;
+    color: var(--white);
+    letter-spacing: 2px;
+    word-spacing: 5px;
+}
+.goods-img-2{
+    width: 500px;
+    margin: 50px 80px;
+}
+.phone{
+    padding-bottom: 50px;
+}
+
+/* footer section css  */
+footer{
+    background-color: var(--footer-color);
+}
+footer .logo a{
+    color: var(--private-color);
+    font-size: 40px;
+    font-style: italic;
+}
+footer .footer-content ul li{
+    padding: 15px;
+}
+footer .footer-content ul li a{
+    color: black;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+footer .send-email h1{
+    text-align: center;
+    font-style: italic;
+    color: var(--private-color);
+}
+footer .send-email input{
+    padding: 10px;
+    margin: 30px 30px;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+footer .send-email a{
+    border: 1px solid var(--private-color);
+    background-color: var(--private-color);
+    color: var(--white);
+    padding: 10px 30px;
+    margin: 0 100px;
+    transition: all 0.5s;
+}
+footer .send-email a:hover{
+    color: var(--private-color);
+    border: 1px solid var(--private-color);
+    background-color: var(--white);
+}
+
+/* cart section css  */
+.cart-details{
+    width: 20%;
+    padding: 30px;
+}
+.search input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--private-color);
+    outline: none;
+    padding-bottom: 10px;
+    font-size: 20px;
+    color: var(--private-color);
+    margin: 30px 0;
+}
+.search i{
+    font-size: 20px;
+    padding: 0 5px;
+    color: var(--private-color);
+}
+.cart-details h2{
+    font-weight: 300;
+    font-size: 18px;
+    padding: 30px 0;
+}
+.cart-details h2 a{
+    color: black;
+}
+.cart-details h2 i{
+    font-size: 15px;
+    padding: 0 10px;
+}
+.cart-details h3{
+    font-size: 25px;
+    font-weight: 300;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+.cart-details .list-item button{
+    padding: 8px 0;
+    width: 100%;
+    border: none;
+    background-color: var(--white);
+    text-align: left;
+    font-size: 18px;
+}
+.cart-details .filter-price h2{
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+    margin-top: 40px;
+    margin-bottom: 10px
+}
+.cart-details .filter-price button{
+    padding: 8px 0;
+    width: 100%;
+    border: none;
+    background-color: var(--white);
+    text-align: left;
+    font-size: 16px;
+}
+.products h1{
+    font-size: 30px;
+    font-style: italic;
+    padding: 20px;
+    font-weight: 500;
+}
+.products #carts{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+.products #carts h3{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 200;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+.products #carts h2{
+    text-align: center;
+    color: var(--private-color);
+    font-weight: 200;
+    font-size: 18px;
+    font-style: italic;
+    padding: 10px 0;
+}
+.products #carts div{
+    position: relative;
+}
+.products #carts button{
+    padding: 10px 30px;
+    font-size: 20px;
+    width: 100%;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    bottom: 70px;
+    transition: all 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+.products #carts div:hover button{
+    visibility: visible;
+    opacity: 1;
+    bottom: 80px;
+}
+
+/* contact section css  */
+
+.contact h1{
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    padding: 50px;
+}
+.contact h2{
+    text-align: center;
+    font-weight: 200;
+    font-style: italic;
+    color: var(--private-color);
+    letter-spacing: 1px;
+    padding: 20px;
+}
+.contact p{
+    font-size: 15px;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    line-height: 20px;
+    padding-bottom: 80px;
+}
+.contact form{
+    width: 700px;
+    margin: auto;
+}
+.contact form .input-width{
+    width: 47%;
+}
+.contact form input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--private-color);
+    outline: none;
+    font-size: 20px;
+    color: var(--private-color);
+    margin-bottom: 20px;
+    width: 98%;
+    padding: 10px;
+    margin: 9px;
+}
+.contact form textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--private-color);
+    outline: none;
+    font-size: 20px;
+    color: var(--private-color);
+    margin-bottom: 20px;
+    width: 98%;
+    padding: 10px;
+    margin: 9px;
+}
+.contact form button{
+    border: 1px solid var(--private-color);
+    background-color: var(--private-color);
+    font-size: 20px;
+    color: var(--white);
+    margin: 50px 250px;
+    padding: 10px 50px;
+    transition: all 0.5s;
+}
+.contact form button:hover{
+    color: var(--private-color);
+    border: 1px solid var(--private-color);
+    background-color: var(--white);
+}
+
+/* my product section css */
+
+
+.my-product{
+    width: 500px;
+    margin: 100px auto;
+    padding: 80px 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0,0.2);
+}
+.my-product h1{
+    font-size: 40px;
+    font-style: italic;
+    color: var(--private-color);
+    padding-bottom: 50px;
+    margin-left: 20px;
+}
+.my-product input{
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+    padding: 20px;
+    outline: none;
+    margin-bottom: 10px;
+}
+.userform p{
+    font-size: 20px;
+    padding: 20px;
+}
+.userform p a{
+    color: var(--private-color);
+}
+.my-product button{
+    font-size: 20px;
+    padding: 15px 40px;
+    background-color: var(--private-color);
+    border: none;
+    color: var(--white);
+    margin-top: 35px;
+    margin-left: 20px;
+    border: 1px solid var(--private-color);
+    transition: all 0.5s;
+}
+.my-product button:hover{
+    background-color: var(--white);
+    border: 1px solid var(--private-color);
+    color: var(--private-color);
+}
