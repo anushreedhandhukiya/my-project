@@ -11,14 +11,11 @@
     <%- include("navbar") %>
     <div class="container">
         <div class="my-product">
+            <h1>Product Form</h1>
             <form action="/cart/product" method="post">
-                <label for="image">Product Image :</label>
-                <input type="text" name="img" id="img">
-                <label for="title">Title :</label>
-                <input type="text" name="title" id="title">
-                <label for="price">Price :</label>
-                <input type="number" name="price" id="price">
-                <label for="category">Category :</label>
+                <input type="text" name="img" id="img" placeholder="Product Image">
+                <input type="text" name="title" id="title" placeholder="Title">
+                <input type="number" name="price" id="price" placeholder="Price">
                 <select name="category" id="">
                     <option value="bags">Bags</option>
                     <option value="goods">Leather Goods</option>

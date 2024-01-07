@@ -35,13 +35,11 @@ a{
 
 /* header css  */
 header{
-    padding: 20px 0;
-    background-color: rgb(231, 231, 231);
+    padding: 10px 0;
+    background-color: #e7e7e7;
 }
-header .logo a{
-    color: var(--private-color);
-    font-size: 40px;
-    font-style: italic;
+header .logo a img{
+    width: 120px;
 }
 header nav ul li{
     padding: 0 20px;
@@ -53,24 +51,6 @@ header nav ul li a{
 }
 header nav ul li a:hover{
     color: var(--private-color);
-}
-header nav ol{
-    box-shadow: 0px 0px 15px rgba(0, 0, 0,0.2);
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    position: absolute;
-    top: 53px;  
-    z-index: 9;
-    visibility: hidden;
-    opacity: 0;
-}
-header nav ul li:hover ol{
-    visibility: visible;
-    opacity: 1;
-}
-header nav ol li{
-    padding: 10px 0;
 }
 header .nav-icon ol li{
     font-size: 20px;
@@ -143,22 +123,25 @@ header .nav-icon i:hover{
 }
 .overlay{
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.425);
+    background-color: rgba(0, 0, 0, 0.468);
     width: 100%;
     height: 100%;
 }
 .home-btn{
     position: absolute;
     top: 40%;
-    left: 35%;
-    right: 35%;
+    left: 25%;
+    right: 25%;
     text-align: center;
 }
 .home-btn h1{
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     letter-spacing: 3px;
-    margin-bottom: 60px
+    word-spacing: 5px;
+    margin-bottom: 60px;
+    font-style: italic;
+    font-weight: 200;
 }
 .home-btn a{
     padding: 20px 50px;
@@ -230,7 +213,7 @@ header .nav-icon i:hover{
     padding: 10px 0;
 }
 .all-shopping{
-    width: 250px;
+    width: 200px;
     margin: auto;
 }
 .all-shopping a{
@@ -245,88 +228,6 @@ header .nav-icon i:hover{
     color: var(--private-color);
     border: 1px solid var(--private-color);
     background-color: var(--white);
-}
-.image-1{
-    margin: 50px 0;
-}
-.belt-img-1{
-    position: relative;
-    padding: 20px;
-}
-.belt-img-1 img{
-    width: 600px;
-}
-.belt-img-1 a{
-    position: absolute;
-    left: 200px;
-    top: 200px;
-    font-size: 30px;
-    color: var(--white);
-    letter-spacing: 2px;
-    word-spacing: 5px;
-}
-.image-belt-2{
-    width: 100%;
-    margin: 100px;
-}
-
-.image-belt-2 h2{
-    text-align: center;
-    font-size: 15px;
-    font-weight: 200;
-    letter-spacing: 1px;
-}
-.image-belt-2 h3{
-    text-align: center;
-    color: var(--private-color);
-    font-weight: 200;
-    font-size: 20px;
-    font-style: italic;
-    padding: 10px 0;
-}
-.image-2{
-    width: 100%;
-    margin: 100px 0;
-}
-.image-2 img{
-    width: 500px;
-}
-.image-2 h2{
-    text-align: center;
-    font-size: 15px;
-    font-weight: 200;
-    letter-spacing: 1px;
-}
-.image-2 h3{
-    text-align: center;
-    color: var(--private-color);
-    font-weight: 200;
-    font-size: 20px;
-    font-style: italic;
-    padding: 10px 0;
-}
-.goods-img-1{
-    position: relative;
-    padding-left: 30px;
-}
-.goods-img-1 img{
-    width: 800px;
-}
-.goods-img-1 a{
-    position: absolute;
-    left: 250px;
-    top: 300px;
-    font-size: 30px;
-    color: var(--white);
-    letter-spacing: 2px;
-    word-spacing: 5px;
-}
-.goods-img-2{
-    width: 500px;
-    margin: 50px 80px;
-}
-.phone{
-    padding-bottom: 50px;
 }
 
 /* footer section css  */
@@ -447,6 +348,10 @@ footer .send-email a:hover{
     grid-template-columns: repeat(4,1fr);
     gap: 20px;
 }
+.product #carts img{
+    width: 200px;
+    height: 200px;
+}
 .products #carts h3{
     text-align: center;
     font-size: 15px;
@@ -485,79 +390,7 @@ footer .send-email a:hover{
     bottom: 80px;
 }
 
-/* contact section css  */
-
-.contact h1{
-    text-align: center;
-    font-size: 30px;
-    letter-spacing: 2px;
-    word-spacing: 5px;
-    padding: 50px;
-}
-.contact h2{
-    text-align: center;
-    font-weight: 200;
-    font-style: italic;
-    color: var(--private-color);
-    letter-spacing: 1px;
-    padding: 20px;
-}
-.contact p{
-    font-size: 15px;
-    width: 400px;
-    margin: auto;
-    text-align: center;
-    line-height: 20px;
-    padding-bottom: 80px;
-}
-.contact form{
-    width: 700px;
-    margin: auto;
-}
-.contact form .input-width{
-    width: 47%;
-}
-.contact form input{
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid var(--private-color);
-    outline: none;
-    font-size: 20px;
-    color: var(--private-color);
-    margin-bottom: 20px;
-    width: 98%;
-    padding: 10px;
-    margin: 9px;
-}
-.contact form textarea{
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid var(--private-color);
-    outline: none;
-    font-size: 20px;
-    color: var(--private-color);
-    margin-bottom: 20px;
-    width: 98%;
-    padding: 10px;
-    margin: 9px;
-}
-.contact form button{
-    border: 1px solid var(--private-color);
-    background-color: var(--private-color);
-    font-size: 20px;
-    color: var(--white);
-    margin: 50px 250px;
-    padding: 10px 50px;
-    transition: all 0.5s;
-}
-.contact form button:hover{
-    color: var(--private-color);
-    border: 1px solid var(--private-color);
-    background-color: var(--white);
-}
-
 /* my product section css */
-
 
 .my-product{
     width: 500px;
@@ -581,12 +414,14 @@ footer .send-email a:hover{
     outline: none;
     margin-bottom: 10px;
 }
-.userform p{
+.my-product select{
+    width: 95%;
+    margin: 20px 10px;
     font-size: 20px;
-    padding: 20px;
-}
-.userform p a{
-    color: var(--private-color);
+    padding: 10px;
+    outline: none;
+    color: gray;
+    border-radius: 25px;
 }
 .my-product button{
     font-size: 20px;
@@ -596,6 +431,7 @@ footer .send-email a:hover{
     color: var(--white);
     margin-top: 35px;
     margin-left: 20px;
+    cursor: pointer;
     border: 1px solid var(--private-color);
     transition: all 0.5s;
 }

@@ -21,20 +21,16 @@ const cartdata = async (req, res) => {
     res.send(data)
 }
 
-const contact = (req, res) => {
-    res.render("contact")
-}
-
 const mycart = (req, res) => {
     res.render("mycart")
 }
 
 const filltercategory = async (req, res) => {
-    const {category} = req.query
+    const { category } = req.query
     try {
-        let data = await product.find({category})
+        let data = await product.find({ category })
         res.send(data)
-    } 
+    }
     catch (error) {
         res.send({ msg: error })
     }
@@ -53,13 +49,16 @@ const pricefilter = async (req, res) => {
     }
 }
 
-const cartdetails = (req,res)=>{
-    res.render("cartdetails")
-}
-
-const myproduct = (req,res) =>{
+const myproduct = (req, res) => {
     res.render("cartform")
 }
 
+const addproduct = async (req, res) => {
+    req.body.createdBy = req.user
+    let data = await product.create(req.body);
+    res.send(data);
 
-module.exports = { cartpage, createproduct, cartdata, contact, mycart, filltercategory, pricefilter,cartdetails,myproduct }
+}
+
+
+module.exports = { cartpage, createproduct, cartdata, mycart, filltercategory, pricefilter, myproduct, addproduct }

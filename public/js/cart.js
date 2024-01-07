@@ -3,15 +3,17 @@ const display = (data) => {
     data.map((ele) => {
         let img = document.createElement("img")
         img.src = ele.img
+        img.style.width = "315px"
+        img.style.height = "400px"
         let title = document.createElement("h3")
         title.innerHTML = ele.title
         let price = document.createElement("h2")
         price.innerHTML = `$${ele.price}.00`
 
         let btn = document.createElement("button")
-        btn.innerHTML = "Quick View"
+        btn.innerHTML = "Add to Cart"
         btn.addEventListener("click", () => {
-            window.location.href = "/cart/cartdetails"
+            window.location.href = "/cart/mycart"
         })
 
         let div = document.createElement("div")
