@@ -113,6 +113,22 @@ header .nav-icon i:hover{
     border: 1px solid var(--private-color);
     color: var(--private-color);
 }
+.userform select{
+    width: 95%;
+    margin: 20px 10px;
+    font-size: 20px;
+    padding: 10px;
+    outline: none;
+    color: gray;
+    border-radius: 25px;
+}
+.userform h3{
+    text-align: right;
+}
+.userform h3 a{
+    color: black;
+    font-weight: 200;
+}
 
 /* home css */
 .home-img{

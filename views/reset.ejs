@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mycart</title>
-    <link rel="stylesheet" href="/media.css">
+    <title>Reset Password</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <%- include("navbar") %>
 
-    <section>
+    <section class="userform">
         <div class="container">
-            <div class="mycart">
-                <div id="box"></div>
-            </div>
+            <h1>Forgot Password</h1>
+            <form action="/user/reset" method="post">
+                <input type="text" name="email" placeholder="Email" required>
+                <button type="submit">Forgot Password</button>
+            </form>
         </div>
     </section>
 
     <!-- footer section  -->
     <%- include("footer") %>
 </body>
-<script src="/js/mycart.js"></script>
 </html>

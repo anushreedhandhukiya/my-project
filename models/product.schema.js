@@ -8,5 +8,5 @@ const  productSchema = new mongoose.Schema({
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "user" }
 })
 
-const product = mongoose.model("product",productSchema)
+const product = mongoose.model("Product",productSchema)
 module.exports=product

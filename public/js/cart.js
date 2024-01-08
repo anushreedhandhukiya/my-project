@@ -1,3 +1,11 @@
+const addmycart = (id) =>{
+    fetch("/cart/mycart",{
+        method : "POST",
+        headers : {"Contain-Type":"application/json"},
+        body : JSON.stringify({productId : id})
+    })
+}
+
 const display = (data) => {
     document.getElementById("carts").innerHTML = ""
     data.map((ele) => {
@@ -8,12 +16,12 @@ const display = (data) => {
         let title = document.createElement("h3")
         title.innerHTML = ele.title
         let price = document.createElement("h2")
-        price.innerHTML = `$${ele.price}.00`
+        price.innerHTML = `₹${ele.price}.00`
 
         let btn = document.createElement("button")
         btn.innerHTML = "Add to Cart"
         btn.addEventListener("click", () => {
-            window.location.href = "/cart/mycart"
+            addmycart(ele._id)
         })
 
         let div = document.createElement("div")

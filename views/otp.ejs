@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mycart</title>
-    <link rel="stylesheet" href="/media.css">
+    <title>Document</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <%- include("navbar") %>
-
-    <section>
+    <section class="userform">
         <div class="container">
-            <div class="mycart">
-                <div id="box"></div>
-            </div>
+            <form action="/user/reset/otp" method="post">
+                <h1>OTP Verify</h1>
+                <input type="text" name="otp" placeholder="Enter Your OTP">
+                <button id="submit">Submit</button>
+            </form>
         </div>
     </section>
-
     <!-- footer section  -->
     <%- include("footer") %>
 </body>
-<script src="/js/mycart.js"></script>
 </html>

@@ -1,3 +1,4 @@
+const Cart = require("../models/cart.schema")
 const product = require("../models/product.schema")
 
 
@@ -57,8 +58,21 @@ const addproduct = async (req, res) => {
     req.body.createdBy = req.user
     let data = await product.create(req.body);
     res.send(data);
+}
 
+const addmycart = async(req,res) =>{
+    let userId = req.user;
+    req.body.userId = userId;
+
+    let data = await Cart.create(req.body)
+    console.log(data);
+    res.send(data)
+}
+
+const mycartdata = async(req,res)=>{
+    let data = await Cart.find({ userId: req.user }).populate("productId")
+    res.send(data)
 }
 
 
-module.exports = { cartpage, createproduct, cartdata, mycart, filltercategory, pricefilter, myproduct, addproduct }
+module.exports = { cartpage, createproduct, cartdata, mycart, filltercategory, pricefilter, myproduct, addproduct,addmycart ,mycartdata}
