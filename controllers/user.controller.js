@@ -70,19 +70,21 @@ const transport = nodemailer.createTransport({
     },
 });
 
-let storedOTP = ""
+let storedOTP = {}
 const resetEmail = async (req, res) => {
     const { email } = req.body
-    storedOTP = otpgenerator.generate(6, {
+    storedOTP.otp = otpgenerator.generate(6, {
         upperCaseAlphabets: false,
         lowerCaseAlphabets: false,
         specialChars: false
     })
+
+    storedOTP.email = email
     const mailOption = {
         form: "anushreecd2000@gmail.com",
         to: email,
         subject: "Reset Your Password",
-        html: `<a href="http://localhost:8090/user/verify/${storedOTP}">Click to verify your OTP${storedOTP}</a>`
+        html: `<a href="http://localhost:8090/user/verify/${storedOTP.otp}">Click to verify your OTP${storedOTP.otp}</a>`
     }
     transport.sendMail(mailOption, (err, info) => {
         if (err) {
@@ -95,30 +97,20 @@ const resetEmail = async (req, res) => {
     res.render("otp")
 }
 
-const reset = async (req, res) => {
-    const { email } = req.body;
-    try {
-        await resetEmail(email);
-        res.send("OTP Send");
-    }
-    catch (error) {
-        res.send({ error: "error" })
-    }
-}
-
 const otpform = (req, res) => {
     res.render("otp")
 }
 
 const otpverify = (req, res) => {
-    let { token } = req.params;
+    let { otp } = req.body;
+    console.log(otp, storedOTP);
     try {
-        if (token === storedOTP) {
-            res.render("reset", { token });
+        if (otp === storedOTP.otp) {
+            res.render("reset")
         } else {
             res.send("Wrong OTP");
         }
-    } 
+    }
     catch (error) {
         res.send({ error: "error" })
     }
@@ -126,6 +118,12 @@ const otpverify = (req, res) => {
 
 const forgot = (req, res) => {
     res.render("resetform")
+}
+
+const reset = async (req, res) => {
+    const {  newPassword } = req.body;
+    const newpass = await user.findOneAndUpdate( { password: newPassword });
+    res.send(newpass);
 }
 
 module.exports = { signup, signupage, login, loginpage, logout, reset, otpform, otpverify, resetEmail, forgot }

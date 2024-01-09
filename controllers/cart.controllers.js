@@ -21,7 +21,6 @@ const cartdata = async (req, res) => {
     let data = await product.find(id)
     res.send(data)
 }
-
 const mycart = (req, res) => {
     res.render("mycart")
 }
@@ -55,13 +54,13 @@ const myproduct = (req, res) => {
 }
 
 const addproduct = async (req, res) => {
-    req.body.createdBy = req.user
+    req.body.createdBy = req.user.id
     let data = await product.create(req.body);
     res.send(data);
 }
 
 const addmycart = async(req,res) =>{
-    let userId = req.user;
+    let userId = req.user.id;
     req.body.userId = userId;
 
     let data = await Cart.create(req.body)
@@ -70,9 +69,9 @@ const addmycart = async(req,res) =>{
 }
 
 const mycartdata = async(req,res)=>{
-    let data = await Cart.find({ userId: req.user }).populate("productId")
+    let data = await Cart.find({ userId: req.user.id }).populate("productId")
     res.send(data)
 }
 
 
-module.exports = { cartpage, createproduct, cartdata, mycart, filltercategory, pricefilter, myproduct, addproduct,addmycart ,mycartdata}
+module.exports = { cartpage,cartdata,createproduct, mycart, filltercategory, pricefilter, myproduct, addproduct,addmycart ,mycartdata}
