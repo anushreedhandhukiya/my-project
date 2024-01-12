@@ -1,8 +1,9 @@
 const addmycart = (id) =>{
-    fetch("/cart/mycart",{
-        method : "POST",
-        headers : {"Contain-Type":"application/json"},
-        body : JSON.stringify({productId : id})
+    console.log(id);
+    fetch(`/cart/mycart`,{
+        method :"POST",
+        headers : {"Content-Type": "application/json"},
+        body :JSON.stringify({productId:id})
     })
 }
 

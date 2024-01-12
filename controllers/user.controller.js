@@ -84,7 +84,7 @@ const resetEmail = async (req, res) => {
         form: "anushreecd2000@gmail.com",
         to: email,
         subject: "Reset Your Password",
-        html: `<a href="http://localhost:8090/user/verify/${storedOTP.otp}">Click to verify your OTP${storedOTP.otp}</a>`
+        html: `<a href="http://localhost:8090/user/verify/${storedOTP.otp}">Click to verify your OTP ${storedOTP.otp}</a>`
     }
     transport.sendMail(mailOption, (err, info) => {
         if (err) {
