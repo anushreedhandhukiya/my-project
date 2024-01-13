@@ -1,5 +1,5 @@
 const {Router} = require("express")
-const { cartpage, mycart, filltercategory, pricefilter, myproduct, addproduct, addmycart, mycartdata, cartdata, createproduct, updatedata, deletedata, payment } = require("../controllers/cart.controllers")
+const { cartpage, mycart, filltercategory, pricefilter, myproduct, addproduct, addmycart, mycartdata, cartdata, createproduct, updatedata, deletedata, payment, allproduct } = require("../controllers/cart.controllers")
 const { isAdmin, verifyToken } = require("../middleware/auth")
 
 const cartRoute = Router()
@@ -16,6 +16,8 @@ cartRoute.post("/mycart",verifyToken,addmycart)
 
 cartRoute.get("/filter",filltercategory)
 cartRoute.get("/sort",pricefilter)
+cartRoute.get("/allproduct",allproduct)
+
 cartRoute.get("/cartdata",verifyToken,mycartdata)
 cartRoute.patch("/update/:id",verifyToken,updatedata)
 cartRoute.delete("/delete/:id",deletedata)

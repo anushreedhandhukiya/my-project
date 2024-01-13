@@ -83,8 +83,8 @@ const resetEmail = async (req, res) => {
     const mailOption = {
         form: "anushreecd2000@gmail.com",
         to: email,
-        subject: "Reset Your Password",
-        html: `<a href="http://localhost:8090/user/verify/${storedOTP.otp}">Click to verify your OTP ${storedOTP.otp}</a>`
+        subject: "Reset Password",
+        html: `<a href="http://localhost:8090/user/verify/${storedOTP.otp}"> Verify your OTP ${storedOTP.otp}</a>`
     }
     transport.sendMail(mailOption, (err, info) => {
         if (err) {
@@ -121,9 +121,33 @@ const forgot = (req, res) => {
 }
 
 const reset = async (req, res) => {
-    const {  newPassword } = req.body;
-    const newpass = await user.findOneAndUpdate( { password: newPassword });
-    res.send(newpass);
+    try {
+        const { newpassword, confirmpassword } = req.body;
+        if (newpassword == confirmpassword) {
+            let updatedata = await user.findById(req.user.id, { password: newpassword })
+            if (updatedata) {
+                bcrypt.hash(newpassword, 5, async (err, hash) => {
+                    if (err) {
+                        return res.send({ error: err.message });
+                    }
+                    let object = {
+                        email: updatedata.email,
+                        password: hash,
+                        username: updatedata.username,
+                        role: updatedata.role
+                    }
+                    let data = await user.findOneAndUpdate(object)
+                    return res.send(data);
+                })
+            }
+        }
+        else {
+            res.send("password not change")
+        }
+    }
+    catch (error) {
+        res.send({ error: "error" })
+    }
 }
 
 module.exports = { signup, signupage, login, loginpage, logout, reset, otpform, otpverify, resetEmail, forgot }

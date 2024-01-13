@@ -7,7 +7,7 @@ const isAdmin = (req, res, next) => {
     }
     
     let data = jwt.verify(token, "token");
-    if (data.role == "admin") {
+    if (data.role == "Admin") {
       req.user=data
       return next();
     } 

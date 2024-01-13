@@ -1,9 +1,9 @@
-const addmycart = (id) =>{
+const addmycart = (id) => {
     console.log(id);
-    fetch(`/cart/mycart`,{
-        method :"POST",
-        headers : {"Content-Type": "application/json"},
-        body :JSON.stringify({productId:id})
+    fetch(`/cart/mycart`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productId: id })
     })
 }
 
@@ -23,12 +23,20 @@ const display = (data) => {
         btn.innerHTML = "Add to Cart"
         btn.addEventListener("click", () => {
             addmycart(ele._id)
+            alert("Product added successfully")
         })
 
         let div = document.createElement("div")
         div.append(img, title, price, btn)
         document.getElementById("carts").append(div)
     })
+}
+
+const allproducts = (alldata) => {
+    fetch(`/cart/allproduct?id=${alldata}`)
+        .then((response) => response.json())
+        .then((response) => display(response))
+        .catch((error) => console.log(error))
 }
 
 const filterdata = (uifilter) => {
@@ -38,7 +46,7 @@ const filterdata = (uifilter) => {
         .catch((error) => console.log(error))
 }
 
-document.getElementById("all").addEventListener("click", () => filterdata("bags", "goods", "minigoods", "phone"))
+document.getElementById("all").addEventListener("click", () => allproducts("all"))
 document.getElementById("bags").addEventListener("click", () => filterdata("bags"))
 document.getElementById("goods").addEventListener("click", () => filterdata("goods"))
 document.getElementById("minigoods").addEventListener("click", () => filterdata("minigoods"))

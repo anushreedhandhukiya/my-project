@@ -19,7 +19,7 @@ const deleted = (id) => {
 }
 
 const handlePayment = async (amount) => {
-    let res = await fetch("/cart/payment", {
+    let res = await fetch("/product/payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: amount })
@@ -33,6 +33,7 @@ const handlePayment = async (amount) => {
 const display = (data) => {
     let totalPrice = 0
     document.getElementById("box").innerHTML = ""
+    document.getElementById("box2").innerHTML = ""
     data.map((element) => {
         let ele = element.productId
         totalPrice += ele.price * element.qty
@@ -82,13 +83,15 @@ const display = (data) => {
 
         document.getElementById("box").append(div5)
     })
-    // let subTotal = document.createElement("h2")
-    // subTotal.innerHTML = `Sub Total: ${totalPrice}`
+
+    let paymentPrice = document.createElement("h4")
+    paymentPrice.innerHTML = `<b>Total Price :</b> ₹${totalPrice}.00`
+    
     let priceBtn = document.createElement("button")
-    priceBtn.innerHTML = `Total Price: ${totalPrice}`
-    document.getElementById("box2").append(priceBtn)
+    priceBtn.innerHTML = `<b>PAYMENT :</b> ₹${totalPrice}.00`
     priceBtn.addEventListener("click", () => handlePayment(totalPrice))
-    // subTotal.addEventListener("click", () => handlePayment(totalPrice))
+    
+    document.getElementById("box2").append(paymentPrice,priceBtn)
 }
 
 function get() {

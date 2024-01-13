@@ -1,7 +1,6 @@
 const Cart = require("../models/cart.schema")
 const product = require("../models/product.schema")
 const Razorpay = require("razorpay")
-const { options } = require("../routes/cart.routes")
 
 
 const cartpage = (req, res) => {
@@ -48,6 +47,17 @@ const pricefilter = async (req, res) => {
     else if (sort == "htl") {
         const data = await product.find().sort({ price: -1 })
         res.send(data)
+    }
+}
+
+const allproduct = async(req,res) =>{
+    const {id} = req.body
+    try {
+        let data = await product.find(id)
+        res.send(data)
+    } 
+    catch (error) {
+        res.send({ msg: error })
     }
 }
 
@@ -116,4 +126,4 @@ const payment = (req, res) => {
     })
 }
 
-module.exports = { cartpage,cartdata,payment,deletedata,createproduct,updatedata, mycart, filltercategory, pricefilter, myproduct, addproduct,addmycart ,mycartdata}
+module.exports = { cartpage,cartdata,allproduct,payment,deletedata,createproduct,updatedata, mycart, filltercategory, pricefilter, myproduct, addproduct,addmycart ,mycartdata}

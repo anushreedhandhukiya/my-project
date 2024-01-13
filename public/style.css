@@ -17,6 +17,10 @@
     max-width: 1140px;
     margin: auto;
 }
+.w-25{
+    width: 25%;
+    padding: 15px;
+}
 ul,ol{
     list-style: none;
 }
@@ -216,7 +220,7 @@ header .nav-icon i:hover{
 }
 .bags .slider-img h3{
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 200;
     letter-spacing: 1px;
 }
@@ -250,10 +254,8 @@ header .nav-icon i:hover{
 footer{
     background-color: var(--footer-color);
 }
-footer .logo a{
-    color: var(--private-color);
-    font-size: 40px;
-    font-style: italic;
+footer .logo a img{
+    width: 150px;
 }
 footer .footer-content ul li{
     padding: 15px;
@@ -295,26 +297,12 @@ footer .send-email a:hover{
 .cart-details{
     width: 20%;
     padding: 30px;
-}
-.search input{
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid var(--private-color);
-    outline: none;
-    padding-bottom: 10px;
-    font-size: 20px;
-    color: var(--private-color);
-    margin: 30px 0;
-}
-.search i{
-    font-size: 20px;
-    padding: 0 5px;
-    color: var(--private-color);
+    margin-top: 50px;
 }
 .cart-details h2{
     font-weight: 300;
     font-size: 18px;
-    padding: 30px 0;
+    padding: 50px 0;
 }
 .cart-details h2 a{
     color: black;
@@ -533,6 +521,7 @@ footer .send-email a:hover{
 }
 .payment-price #box2{
     border-top: 1px solid #e0e0e0;
+    position: static;
 }
 .payment-price #box2 h2{
     margin: 10px;
@@ -540,11 +529,19 @@ footer .send-email a:hover{
     padding: 10px 30px;
     font-weight: 200;
 }
+.payment-price #box2 h4{
+    margin: 10px;
+    font-size: 20px;
+    padding: 10px 30px;
+    background-color: white;
+    border: none;
+    font-weight: 300;
+}
 .payment-price #box2 button{
     margin: 10px;
     font-size: 20px;
     padding: 10px 30px;
     background-color: white;
     border: none;
-    border-top: 1px solid #e0e0e0;
+    border: 1px solid #e0e0e0;
 }
