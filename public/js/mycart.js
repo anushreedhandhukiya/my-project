@@ -19,7 +19,7 @@ const deleted = (id) => {
 }
 
 const handlePayment = async (amount) => {
-    let res = await fetch("/product/payment", {
+    let res = await fetch("/cart/payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: amount })
