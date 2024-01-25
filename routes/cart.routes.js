@@ -1,5 +1,5 @@
 const {Router} = require("express")
-const { cartpage, mycart, filltercategory, pricefilter, myproduct, addproduct, addmycart, mycartdata, cartdata, createproduct, updatedata, deletedata, payment, allproduct } = require("../controllers/cart.controllers")
+const { cartpage, mycart, filltercategory, pricefilter, myproduct, addproduct, addmycart, mycartdata, cartdata, createproduct, updatedata, deletedata, payment, allproduct, singleproduct } = require("../controllers/cart.controllers")
 const { isAdmin, verifyToken } = require("../middleware/auth")
 
 const cartRoute = Router()
@@ -22,5 +22,7 @@ cartRoute.get("/cartdata",verifyToken,mycartdata)
 cartRoute.patch("/update/:id",verifyToken,updatedata)
 cartRoute.delete("/delete/:id",deletedata)
 cartRoute.post("/payment",payment)
+
+cartRoute.get("/singleproduct/:id",singleproduct)
 
 module.exports=cartRoute

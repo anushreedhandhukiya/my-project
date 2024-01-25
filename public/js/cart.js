@@ -1,12 +1,3 @@
-const addmycart = (id) => {
-    console.log(id);
-    fetch(`/cart/mycart`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId: id })
-    })
-}
-
 const display = (data) => {
     document.getElementById("carts").innerHTML = ""
     data.map((ele) => {
@@ -20,10 +11,9 @@ const display = (data) => {
         price.innerHTML = `₹${ele.price}.00`
 
         let btn = document.createElement("button")
-        btn.innerHTML = "Add to Cart"
-        btn.addEventListener("click", () => {
-            addmycart(ele._id)
-            alert("Product added successfully")
+        btn.innerHTML = "View Details"
+        btn.addEventListener("click",()=>{
+            window.location.href=`/cart/singleproduct/${ele._id}`
         })
 
         let div = document.createElement("div")

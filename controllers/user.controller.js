@@ -130,12 +130,7 @@ const reset = async (req, res) => {
                     if (err) {
                         return res.send({ error: err.message });
                     }
-                    let object = {
-                        email: updatedata.email,
-                        password: hash,
-                        username: updatedata.username,
-                        role: updatedata.role
-                    }
+                    let object = { password: hash }
                     let data = await user.findOneAndUpdate(object)
                     return res.send(data);
                 })

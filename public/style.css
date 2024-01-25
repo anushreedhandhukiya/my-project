@@ -21,6 +21,10 @@
     width: 25%;
     padding: 15px;
 }
+.w-50{
+    width: 50%;
+    padding: 15px;
+}
 ul,ol{
     list-style: none;
 }
@@ -544,4 +548,64 @@ footer .send-email a:hover{
     background-color: white;
     border: none;
     border: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+
+/* singlepage css  */
+
+#single{
+    width: 100%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0,0.2);
+    margin: 50px 0;
+    border-radius: 25px;
+}
+#single img{
+    width: 100%;
+    padding: 20px;
+}
+#single .single-content{
+    padding: 40px;
+}
+#single h3{
+    font-size: 40px;
+    font-weight: 300;
+}
+#single h4{
+    font-size: 25px;
+    padding: 10px 0;
+    font-weight: 200;
+}
+#single h5{
+    font-size: 20px;
+    padding: 40px 0;
+    font-weight: 200;
+}
+#single h5 span{
+    color: var(--private-color);
+}
+#single button{
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    background-color: var(--private-color);
+    border: none;
+    color: var(--white);
+    border: 1px solid var(--private-color);
+    transition: all 0.5s;
+}
+#single button:hover{
+    background-color: var(--white);
+    color: var(--private-color);
+}
+#single h1{
+    color: var(--private-color);
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-weight: normal;
+    font-size: 20px;
+}
+#single p{
+    margin-right: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 25px;
 }
