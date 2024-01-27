@@ -11,6 +11,7 @@ const addmycart = (id) => {
 }
 
 document.getElementById("btn").addEventListener("click", () => {
+    window.location.href = `/cart/mycart`
     addmycart(id)
     alert("Product added Successfully")
 })

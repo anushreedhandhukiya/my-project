@@ -460,9 +460,11 @@ footer .send-email a:hover{
     padding-bottom: 10px;
     padding-left: 25px;
     font-weight: 200;
+    color: var(--private-color);
+    font-weight: bold;
 }
 .mycart #box{
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--private-color);
 }
 .mycart #box div{
     padding: 10px;
@@ -511,7 +513,7 @@ footer .send-email a:hover{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--private-color);
 }
 .payment-price{
     width: 30%;
@@ -522,9 +524,11 @@ footer .send-email a:hover{
     padding-bottom: 10px;
     padding-left: 25px;
     font-weight: 200;
+    color: var(--private-color);
+    font-weight: bold;
 }
 .payment-price #box2{
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--private-color);
     position: static;
 }
 .payment-price #box2 h2{
@@ -545,10 +549,41 @@ footer .send-email a:hover{
     margin: 10px;
     font-size: 20px;
     padding: 10px 30px;
-    background-color: white;
+    background-color: var(--private-color);
+    color: var(--white);
     border: none;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--private-color);
     cursor: pointer;
+    transition: all 0.5s;
+}
+.payment-price #box2 button:hover{
+    background-color: var(--white);
+    color: black;
+}
+.payment-price #box2 button span{
+    margin-left: 30px;
+}
+.payment-price #box2 h3{
+    font-weight: 300;
+    padding: 10px 30px;
+    margin: 10px;
+}
+.payment-price #box2 h5{
+    font-weight: 300;
+    padding: 0 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid var(--private-color);
+}
+.payment-price #box2 h4 span{
+    margin-left: 47px;
+}
+.payment-price #box2 h3 span{
+    margin-left: 22px;
+}
+.payment-price #box2 h5 span{
+    margin-left: 110px;
 }
 
 /* singlepage css  */

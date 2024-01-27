@@ -85,13 +85,19 @@ const display = (data) => {
     })
 
     let paymentPrice = document.createElement("h4")
-    paymentPrice.innerHTML = `<b>Total Price :</b> ₹${totalPrice}.00`
-    
+    paymentPrice.innerHTML = `<b>Subtotal :</b> <span>₹${totalPrice}.00</span>`
+
+    let delivery = document.createElement("h3")
+    delivery.innerHTML = `<b>Shipping Cost :</b> <span>FREE</span>`
+
+    let discount = document.createElement("h5")
+    discount.innerHTML = `<b>Tax :</b> <span>₹0.00</span>`  
+      
     let priceBtn = document.createElement("button")
-    priceBtn.innerHTML = `<b>PAYMENT :</b> ₹${totalPrice}.00`
+    priceBtn.innerHTML = `<b>PAYMENT :</b> <span>₹${totalPrice}.00</span>`
     priceBtn.addEventListener("click", () => handlePayment(totalPrice))
     
-    document.getElementById("box2").append(paymentPrice,priceBtn)
+    document.getElementById("box2").append(paymentPrice,delivery,discount,priceBtn)
 }
 
 function get() {
