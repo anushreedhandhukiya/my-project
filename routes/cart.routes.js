@@ -23,6 +23,6 @@ cartRoute.patch("/update/:id",verifyToken,updatedata)
 cartRoute.delete("/delete/:id",deletedata)
 cartRoute.post("/payment",payment)
 
-cartRoute.get("/singleproduct/:id",singleproduct)
+cartRoute.get("/singleproduct/:id",verifyToken,singleproduct)
 
 module.exports=cartRoute
